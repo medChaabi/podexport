@@ -45,7 +45,8 @@
 1. **Visit a Merch by Amazon design page**  
   For example: [this t-shirt design](https://www.amazon.com/governments-elected-citizens-vote-T-Shirt/dp/B0DF6HPPH1/ref=sr_1_1?dib=eyJ2IjoiMSJ9.w1q7aikUOJrRf_RTNIIaANcI6v8izs52UWsynX_DlP4gUkmBXZoFjhLdecitUiLUe65aWH16cgR2QqL9NnB_pzV4ZvbtFOL-89XYF1FdSspkxrJ6ttVu7zMEk-ydEBQujRNFT03APbmaBZGKGhC8zER9yicFoXMBWCld7M0-YhpAbdmfFy5j28KA-qr6xT9FuYOaomK5YR9_3wfyuoHNxCsyHSX3fL2bZUnPnx3LLOQdcWK3B1CXmQSw31cHTv9J8bo51XEJt3QJZu7l_jCMuSifxHBSeshcYO_0v7R_WIc.f9mVqpzBzDlMg7C8NmU6VoGOTSufI0E0xqC9TXcKl4Y&dib_tag=se&m=ATVPDKIKX0DER&oq=Solid+colors%3A+100%25%2BCotton%3B+Heather+Grey%3A+90%25%2BCotton%2C+10%25%2BPolyester%3B+All+Other+Heathers%3A+50%25%2BCotton%2C+50%25%2BPolyester+Lightweight%2C+Classic+fit%2C+Double-needle+sleeve+and+bottom+hem+Machine+wash+cold+with+like+colors%2C+dry+low+heat+-long+-premium+-sweatshirt+-v-neck+-tank+10+x+8+x+1+inches%3B+4.8+Ounces&qid=1759138764&refinements=p_6%3AATVPDKIKX0DER&s=apparel&sr=1-1)  
   <br>
-  ![Step 1: Visit a Merch by Amazon design page](icons/step1.png)
+
+      <img src="icons/step1.png" alt="Step 1: Visit a Merch by Amazon design page">
 
   <br>
 
