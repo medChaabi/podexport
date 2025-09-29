@@ -1,0 +1,42 @@
+{
+  "name": "podexport",
+  "version": "1.0.0",
+  "description": "Chrome extension for Merch by Amazon t-shirt design downloader",
+  "main": "dist/background.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch",
+    "clean": "rimraf dist/*"
+  },
+  "keywords": [
+    "chrome-extension",
+    "amazon",
+    "merch by amazon",
+    "download",
+    "t-shirt",
+    "png downloader",
+    "merch by amazon downloader",
+    "merch by amazon png downloader",
+    "merch by amazon design downloader chrome extension",
+    "merch by amazon tshirt design downloader"
+  ],
+  "author": "Mohamed Chaabi",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "rimraf": "^5.0.5",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
