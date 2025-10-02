@@ -4,7 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('PodExport popup loaded');
+    //console.log('PodExport popup loaded');
     setupEventListeners();
 });
 
@@ -56,14 +56,14 @@ function setupEventListeners() {
     const donateButton = document.querySelector('.donate-button');
     if (donateButton) {
         donateButton.addEventListener('click', function() {
-            console.log('Rate/Review clicked');
+            //console.log('Rate/Review clicked');
         });
     }
 
     const githubLink = document.querySelector('.github-link');
     if (githubLink) {
         githubLink.addEventListener('click', function() {
-            console.log('GitHub link clicked');
+            //console.log('GitHub link clicked');
         });
     }
 }
@@ -73,7 +73,7 @@ function setupEventListeners() {
  */
 function showStatusMessage(message, type = 'info') {
     // Simplified - just log to console
-    console.log(`Status: ${message}`);
+    //console.log(`Status: ${message}`);
 }
 
 /**
@@ -90,7 +90,7 @@ function sendMessageToContentScript(action, data = {}) {
                     console.error('Error sending message:', chrome.runtime.lastError);
                     showStatusMessage('Error communicating with page', 'danger');
                 } else if (response) {
-                    console.log('Response from content script:', response);
+                    //console.log('Response from content script:', response);
                 }
             });
         }
@@ -101,7 +101,7 @@ function sendMessageToContentScript(action, data = {}) {
  * Listen for messages from other parts of the extension
  */
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    console.log('Popup received message:', request);
+    //console.log('Popup received message:', request);
     
     if (request.action === 'downloadComplete') {
         showStatusMessage('Download completed successfully!', 'success');

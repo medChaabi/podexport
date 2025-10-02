@@ -3,7 +3,7 @@
  * Injects download button on Amazon product images
  */
 
-console.log('PodExport content script loaded on:', window.location.href);
+//console.log('PodExport content script loaded on:', window.location.href);
 
 // Configuration for download button on image
 const CONFIG = {
@@ -36,7 +36,7 @@ const CONFIG = {
 
 // Initialize the extension
 function init() {
-    console.log('PodExport: Initializing...');
+    //console.log('PodExport: Initializing...');
     
     // Wait for page to load completely
     if (document.readyState === 'loading') {
@@ -57,7 +57,7 @@ function checkForProductImage() {
     const reviewAnchor = document.getElementById('averageCustomerReviewsAnchor');
     
     if (!reviewAnchor) {
-        console.log('PodExport: No product reviews found');
+        //console.log('PodExport: No product reviews found');
         return;
     }
     
@@ -65,7 +65,7 @@ function checkForProductImage() {
     const imgWrapper = document.getElementById('imgTagWrapperId');
     
     if (!imgWrapper) {
-        console.log('PodExport: Image wrapper not found');
+        //console.log('PodExport: Image wrapper not found');
         return;
     }
     
@@ -73,11 +73,11 @@ function checkForProductImage() {
     const productImage = imgWrapper.querySelector('img');
     
     if (!productImage || !productImage.src) {
-        console.log('PodExport: Product image not found');
+        //console.log('PodExport: Product image not found');
         return;
     }
     
-    console.log('PodExport: Checking product image URL:', productImage.src);
+    //console.log('PodExport: Checking product image URL:', productImage.src);
     
     // Check if the image URL contains multiple .png parts (encoded as %7C)
     const urlPattern = /\.png%7C.*\.png$/;
@@ -86,15 +86,15 @@ function checkForProductImage() {
     // Count actual .png occurrences in the URL
     const pngCount = (productImage.src.match(/\.png/g) || []).length;
     
-    console.log('PodExport: PNG count in URL:', pngCount);
-    console.log('PodExport: Has multiple PNG pattern:', hasMultiplePngs);
+    //console.log('PodExport: PNG count in URL:', pngCount);
+    //console.log('PodExport: Has multiple PNG pattern:', hasMultiplePngs);
     
     // ONLY show button if URL has 2 OR MORE .png parts
     if (pngCount >= 2) {
-        console.log('PodExport: Valid multi-PNG product detected - SHOWING download button');
+        //console.log('PodExport: Valid multi-PNG product detected - SHOWING download button');
         injectDownloadButton();
     } else {
-        console.log('PodExport: Invalid product (not enough PNG parts) - NOT showing button');
+        //console.log('PodExport: Invalid product (not enough PNG parts) - NOT showing button');
     }
 }
 
@@ -111,7 +111,7 @@ function injectDownloadButton() {
     const imgWrapper = document.getElementById('imgTagWrapperId');
     
     if (!imgWrapper) {
-        console.log('PodExport: Image wrapper not found');
+        //console.log('PodExport: Image wrapper not found');
         return;
     }
     
@@ -119,7 +119,7 @@ function injectDownloadButton() {
     const productImage = imgWrapper.querySelector('img');
     
     if (!productImage) {
-        console.log('PodExport: Product image not found');
+        //console.log('PodExport: Product image not found');
         return;
     }
     
@@ -160,7 +160,7 @@ function injectDownloadButton() {
     // Append to image wrapper
     imgWrapper.appendChild(downloadBtn);
     
-    console.log('PodExport: Download button injected on product image');
+    //console.log('PodExport: Download button injected on product image');
 }
 
 function getImageId(imgSrc){
@@ -218,7 +218,7 @@ function observePageChanges() {
         // Check if URL changed or if product content loaded
         if (window.location.href !== observer.lastUrl) {
             observer.lastUrl = window.location.href;
-            console.log('PodExport: URL changed, re-checking for product image');
+            //console.log('PodExport: URL changed, re-checking for product image');
             
             // Remove existing button if it exists
             const existingBtn = document.getElementById('podexport-download-btn');
@@ -243,7 +243,7 @@ function observePageChanges() {
                     
                     // ONLY show button if URL has 2 OR MORE .png parts
                     if (pngCount >= 2) {
-                        console.log('PodExport: Valid multi-PNG product detected in observer, injecting button');
+                        //console.log('PodExport: Valid multi-PNG product detected in observer, injecting button');
                         injectDownloadButton();
                         return;
                     }
@@ -317,7 +317,7 @@ function showNotification(message, type = 'info') {
  * Listen for messages from popup or background
  */
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    console.log('Content script received message:', request);
+    //console.log('Content script received message:', request);
     
     if (request.action === 'getMediaInfo') {
         const mediaInfo = extractMediaInfo();
