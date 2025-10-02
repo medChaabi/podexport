@@ -5,42 +5,6 @@
   "description": "Download t-shirt designs from Merch by Amazon with ease",
   "author": "Mohamed Chaabi",
   
-  "permissions": [
-    "storage",
-    "activeTab",
-    "downloads",
-    "contextMenus"
-  ],
-  
-  "host_permissions": [
-    "https://*.amazon.com/*",
-    "https://*.amazon.co.uk/*",
-    "https://*.amazon.ca/*",
-    "https://*.amazon.de/*",
-    "https://*.amazon.fr/*",
-    "https://*.amazon.es/*",
-    "https://*.amazon.it/*",
-    "https://*.amazon.co.jp/*",
-    "https://*.amazon.cn/*",
-    "https://*.amazon.com.au/*",
-    "https://*.amazon.com.br/*",
-    "https://*.amazon.com.mx/*",
-    "https://*.amazon.in/*",
-    "https://*.amazon.nl/*",
-    "https://*.amazon.ae/*",
-    "https://*.amazon.sg/*",
-    "https://*.amazon.se/*",
-    "https://*.amazon.pl/*",
-    "https://*.amazon.com.tr/*",
-    "https://*.amazon.sa/*",
-    "https://*.amazonmusic.com/*",
-    "https://*.music.amazon.com/*"
-  ],
-  
-  "background": {
-    "service_worker": "background.js",
-    "type": "module"
-  },
   
   "content_scripts": [
     {

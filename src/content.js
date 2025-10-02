@@ -150,20 +150,11 @@ function injectDownloadButton() {
         Object.assign(this.style, CONFIG.buttonStyles);
     });
     
-    // Add click handler to show image URL
+    // Add click handler to download the image
     downloadBtn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        
-        // Get the image element
-        const imgWrapper = document.getElementById('imgTagWrapperId');
-        const img = imgWrapper.querySelector('img');
-        
-        if (img && img.src) {
-           const imageId = getImageId(img.src);
-           const imageUrl = `https://m.media-amazon.com/images/I/${imageId}.png`;
-           downloadImage(imageUrl);
-        } 
+        downloadCurrentImage();
     });
     
     // Append to image wrapper
@@ -175,6 +166,20 @@ function injectDownloadButton() {
 function getImageId(imgSrc){
     const imageId = imgSrc.split(".png")[0];
     return imageId.slice(-11);
+}
+
+function downloadCurrentImage() {
+    const imgWrapper = document.getElementById('imgTagWrapperId');
+    const img = imgWrapper ? imgWrapper.querySelector('img') : null;
+
+    if (img && img.src) {
+        const imageId = getImageId(img.src);
+        const imageUrl = `https://m.media-amazon.com/images/I/${imageId}.png`;
+        downloadImage(imageUrl);
+        return true;
+    }
+
+    return false;
 }
 
 function downloadImage(imageUrl){
@@ -318,11 +323,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         const mediaInfo = extractMediaInfo();
         sendResponse(mediaInfo);
     } else if (request.action === 'triggerDownload') {
-        handleDownloadClick({
-            currentTarget: document.getElementById('podexport-download-btn'),
-            preventDefault: () => {}
-        });
-        sendResponse({success: true});
+        const ok = downloadCurrentImage();
+        sendResponse({success: ok});
     }
     
     return true; // Keep message channel open for async response

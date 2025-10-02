@@ -5,34 +5,10 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('PodExport popup loaded');
-    
-    // Initialize popup
-    initializePopup();
-
-    // Set up event listeners
     setupEventListeners();
 });
 
-/**
- * Initialize the popup with stored data
- */
-function initializePopup() {
-    // Load any saved preferences or data from chrome.storage
-    chrome.storage.local.get(['authorName', 'extensionStats'], function(result) {
-        if (result.authorName) {
-            // Update author name if customized
-            const authorElements = document.querySelectorAll('.detail-value');
-            if (authorElements[1]) {
-                authorElements[1].textContent = result.authorName;
-            }
-        }
-        
-        if (result.extensionStats) {
-            // Could display stats like number of downloads, etc.
-            console.log('Extension stats:', result.extensionStats);
-        }
-    });
-}
+// No storage or settings are used; popup is static
 
 
 
@@ -77,20 +53,13 @@ function isAmazonDomain(url) {
  * Set up event listeners for popup interactions
  */
 function setupEventListeners() {
-    // Track donate button clicks
     const donateButton = document.querySelector('.donate-button');
     if (donateButton) {
         donateButton.addEventListener('click', function() {
-            // Track donation click
-            chrome.storage.local.get(['donationClicks'], function(result) {
-                const clicks = (result.donationClicks || 0) + 1;
-                chrome.storage.local.set({donationClicks: clicks});
-                console.log('Donation button clicked:', clicks, 'times');
-            });
+            console.log('Rate/Review clicked');
         });
     }
-    
-    // Handle GitHub link clicks
+
     const githubLink = document.querySelector('.github-link');
     if (githubLink) {
         githubLink.addEventListener('click', function() {
