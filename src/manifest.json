@@ -5,9 +5,6 @@
   "description": "Open t-shirt designs from Merch by Amazon in new tabs with ease",
   "author": "Mohamed Chaabi",
   
-  "permissions": [
-    "activeTab"
-  ],
 
   "host_permissions": [
     "https://*.amazon.com/*",
