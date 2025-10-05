@@ -5,28 +5,8 @@
   "description": "Open t-shirt designs from Merch by Amazon in new tabs with ease",
   "author": "Mohamed Chaabi",
   
-
   "host_permissions": [
-    "https://*.amazon.com/*",
-    "https://*.amazon.co.uk/*",
-    "https://*.amazon.ca/*",
-    "https://*.amazon.de/*",
-    "https://*.amazon.fr/*",
-    "https://*.amazon.es/*",
-    "https://*.amazon.it/*",
-    "https://*.amazon.co.jp/*",
-    "https://*.amazon.cn/*",
-    "https://*.amazon.com.au/*",
-    "https://*.amazon.com.br/*",
-    "https://*.amazon.com.mx/*",
-    "https://*.amazon.in/*",
-    "https://*.amazon.nl/*",
-    "https://*.amazon.ae/*",
-    "https://*.amazon.sg/*",
-    "https://*.amazon.se/*",
-    "https://*.amazon.pl/*",
-    "https://*.amazon.com.tr/*",
-    "https://*.amazon.sa/*"
+    "https://*.amazon.com/*"
   ],
 
   "background": {
@@ -36,26 +16,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.amazon.com/*",
-        "https://*.amazon.co.uk/*",
-        "https://*.amazon.ca/*",
-        "https://*.amazon.de/*",
-        "https://*.amazon.fr/*",
-        "https://*.amazon.es/*",
-        "https://*.amazon.it/*",
-        "https://*.amazon.co.jp/*",
-        "https://*.amazon.cn/*",
-        "https://*.amazon.com.au/*",
-        "https://*.amazon.com.br/*",
-        "https://*.amazon.com.mx/*",
-        "https://*.amazon.in/*",
-        "https://*.amazon.nl/*",
-        "https://*.amazon.ae/*",
-        "https://*.amazon.sg/*",
-        "https://*.amazon.se/*",
-        "https://*.amazon.pl/*",
-        "https://*.amazon.com.tr/*",
-        "https://*.amazon.sa/*"
+        "https://*.amazon.com/*"
       ],
       "js": ["content.js"],
       "css": [],
